@@ -1,1 +1,29 @@
-.home-product-photo{display:grid;place-items:center;overflow:hidden;position:relative;z-index:1}.home-product-photo img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 22px 28px rgba(0,0,0,.42))}.hero-photo{position:absolute;inset:105px 10px 0;z-index:1}.card-photo{height:175px;margin:12px 0;border-radius:18px;background:radial-gradient(circle at 50% 50%,rgba(96,165,250,.15),transparent 63%)}.home-product-photo img.product-photo-missing{display:none}.home-product-photo:has(.product-photo-missing):after{content:'Product photo temporarily unavailable';color:#8fa0b7;font-size:11px}.product-preview-media{position:relative}.product-preview-media:has(.product-photo-missing):after{content:'Product photo temporarily unavailable';position:absolute;color:#9eacc0;font-size:11px}@media(max-width:620px){.hero-photo{inset:115px 5px 0}.card-photo{height:190px}}
+.home-product-photo,.product-preview-media{display:grid;place-items:center;position:relative;isolation:isolate;overflow:hidden}
+.home-product-photo{z-index:1}
+.home-product-photo::before,.product-preview-media::before{content:"";position:absolute;inset:12%;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,.16),transparent 67%);filter:blur(8px)}
+.home-product-photo img,.product-preview-media img{display:block;max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;object-position:center;filter:drop-shadow(0 20px 26px rgba(0,0,0,.42));transition:opacity .18s ease,transform .2s ease}
+.home-product-photo img[hidden],.product-preview-media img[hidden]{display:none!important}
+.home-product-photo img.product-photo-loading,.product-preview-media img.product-photo-loading{opacity:0;transform:scale(.985)}
+.hero-photo{position:absolute;inset:220px 24px 18px;z-index:1;padding:0 12px}
+.card-photo{height:190px;margin:14px 0 16px;padding:8px;border-radius:20px;background:radial-gradient(circle at 50% 48%,rgba(96,165,250,.18),transparent 60%),linear-gradient(145deg,rgba(30,41,59,.72),rgba(4,8,15,.72));border:1px solid rgba(148,163,184,.09)}
+.product-photo-fallback{position:absolute;inset:18px;display:grid;place-content:center;gap:5px;padding:18px;text-align:center;border:1px dashed rgba(148,163,184,.38);border-radius:16px;background:linear-gradient(145deg,rgba(15,23,42,.88),rgba(4,8,15,.88));color:#dce7f5}
+.product-photo-fallback[hidden]{display:none!important}
+.product-photo-fallback strong{font-size:15px;line-height:1.25}.product-photo-fallback span{color:#9cacbf;font-size:11px;line-height:1.45}
+.product-preview{grid-template-columns:minmax(240px,.78fr) minmax(0,1.22fr)!important;gap:28px!important;padding:24px!important}
+.product-preview-media{min-height:270px;padding:16px;border-radius:20px;background:radial-gradient(circle at 50% 42%,rgba(59,130,246,.17),transparent 62%),linear-gradient(145deg,#111c2e,#080d15);border:1px solid rgba(148,163,184,.12)}
+.product-preview-media::before{inset:8%;background:radial-gradient(circle,rgba(96,165,250,.22),transparent 66%)}
+.product-preview-copy{min-width:0}.product-preview h3{font-size:clamp(24px,3vw,32px)!important;line-height:1.05;margin:14px 0 18px!important;letter-spacing:-.035em}
+.product-preview-specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0 0 14px}.product-preview-specs span{min-width:0;padding:10px 12px;border-radius:13px;border:1px solid rgba(148,163,184,.14);background:rgba(2,6,23,.38)}
+.product-preview-specs small{display:block;color:#7f90a5;font-size:9px;font-weight:900;letter-spacing:.09em}.product-preview-specs b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:4px;color:#f1f5f9;font-size:12px}
+.product-preview p{max-width:42ch!important;color:#aebdce!important}
+/* Apple Compare photography is a genuine product packshot, delivered as a
+   pale-background JPEG.  Give it a deliberate neutral display stage so the
+   source background reads as part of the design rather than as a raw white
+   rectangle on the dark site. */
+.home-product-photo:has(img[data-product-image-kind="compare"]),.product-preview-media:has(img[data-product-image-kind="compare"]){background:linear-gradient(145deg,#f9fafb,#e9eef5)!important;border-color:rgba(255,255,255,.5)}
+.home-product-photo:has(img[data-product-image-kind="compare"])::before,.product-preview-media:has(img[data-product-image-kind="compare"])::before{display:none}
+.home-product-photo:has(img[data-product-image-kind="compare"]) img,.product-preview-media:has(img[data-product-image-kind="compare"]) img{filter:drop-shadow(0 16px 20px rgba(15,23,42,.22))}
+.hero-photo:has(img[data-product-image-kind="compare"]),.card-photo:has(img[data-product-image-kind="compare"]){box-shadow:0 16px 35px rgba(0,0,0,.24)}
+@media(max-width:900px){.hero-photo{inset:205px 30px 18px}.card-photo{height:205px}.product-preview{grid-template-columns:1fr!important}.product-preview-media{min-height:300px}}
+@media(max-width:620px){.hero-photo{inset:200px 8px 12px;padding:0}.card-photo{height:215px}.product-preview{padding:18px!important;text-align:left!important}.product-preview-media{min-height:280px}.product-preview-specs{grid-template-columns:1fr 1fr}.product-photo-fallback{inset:12px}}
+
