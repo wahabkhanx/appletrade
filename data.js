@@ -3,7 +3,7 @@
 */
 const CATALOG={
 iphone:{label:"iPhone",icon:"📱",models:[
-{id:"duo",name:"iPhone Duo",badge:"PRE-ORDER",display:"5.4-inch outer / 7.6-inch inner",chip:"A20 Pro",colors:["Night Sky","Star White"],storage:["256GB","512GB","1TB","2TB"],base:6200,retail:8499},
+{id:"duo",name:"iPhone Duo",badge:"NEW",display:"5.4-inch outer / 7.6-inch inner",chip:"A20 Pro",colors:["Night Sky","Star White"],storage:["256GB","512GB","1TB","2TB"],base:6200,retail:8499},
 {id:"18pro",name:"iPhone 18 Pro",badge:"NEW",display:"6.3-inch",chip:"A20 Pro",colors:["Black","Silver","Glacier","Burgundy"],storage:["256GB","512GB","1TB","2TB"],base:3900,retail:5099},
 {id:"18promax",name:"iPhone 18 Pro Max",badge:"NEW",display:"6.9-inch",chip:"A20 Pro",colors:["Black","Silver","Glacier","Burgundy"],storage:["256GB","512GB","1TB","2TB"],base:4300,retail:5499},
 {id:"air",name:"iPhone Air",badge:"NEW",display:"6.5-inch",chip:"A19 Pro",colors:["Space Black","Cloud White","Light Gold","Sky Blue"],storage:["256GB","512GB","1TB"],base:3000,retail:4699},
